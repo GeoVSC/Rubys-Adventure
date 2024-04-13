@@ -67,19 +67,21 @@ public class Enemy : MonoBehaviour
 	{
 		if(repaired)
 			return;
-		
+
 		RubyController controller = other.collider.GetComponent<RubyController>();
 		
+
 		if(controller != null)
 			controller.ChangeHealth(-1);
 	}
 
 	public void Fix()
 	{
-		animator.SetTrigger("Fixed");
+        ScoreScript.instance.AddPoint();
+        animator.SetTrigger("Fixed");
 		repaired = true;
-		
-		smokeParticleEffect.SetActive(false);
+        
+        smokeParticleEffect.SetActive(false);
 
 		Instantiate(fixedParticleEffect, transform.position + Vector3.up * 0.5f, Quaternion.identity);
 
@@ -91,3 +93,6 @@ public class Enemy : MonoBehaviour
 		audioSource.PlayOneShot(fixedSound);
 	}
 }
+
+
+
