@@ -84,6 +84,10 @@ public class RubyController : MonoBehaviour
                 }
             }
         }
+        if (currentHealth <= 0)
+        {
+            SceneManager.LoadScene("lose");
+        }
     }
     
     void FixedUpdate()

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScoreScript : MonoBehaviour {
 
@@ -25,6 +26,14 @@ public class ScoreScript : MonoBehaviour {
 
         score += 1;
         scoreText.text = "Bots Fixed: " + score.ToString() + "/4";
-
+       
+    }
+    public void Update()
+    {
+        if (score >= 4)
+        {
+            SceneManager.LoadScene("Win");
+        }
     }
 }
+
