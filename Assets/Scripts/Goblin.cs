@@ -7,7 +7,7 @@ public class Goblin : MonoBehaviour
     public Transform[] patrolPoints;
     public int targetPoint;
     public float speed;
-
+    public GameObject coin;
 
     void Start()
     {
@@ -25,6 +25,17 @@ public class Goblin : MonoBehaviour
 
     }
 
+    public void OnTriggerEnter2D(){
+        if(coin.activeInHierarchy == false){
+            coin.SetActive(true);
+
+        
+        }
+        else{
+            coin.SetActive(false);
+        }
+            
+    }
     void increaseTargetInt(){
         targetPoint++;
     }
