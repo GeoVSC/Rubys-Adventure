@@ -7,7 +7,8 @@ public class Goblin : MonoBehaviour
     public Transform[] patrolPoints;
     public int targetPoint;
     public float speed;
-    
+
+
     void Start()
     {
         targetPoint = 0;
@@ -21,11 +22,12 @@ public class Goblin : MonoBehaviour
         }
 
         transform.position = Vector3.MoveTowards(transform.position, patrolPoints[targetPoint].position, speed * Time.deltaTime);
-    
+
     }
 
     void increaseTargetInt(){
         targetPoint++;
     }
+
 }
 
