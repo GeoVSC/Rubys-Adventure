@@ -4,31 +4,31 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class CoinScore : MonoBehaviour
+public class CoinPoints : MonoBehaviour
 {
-    public static CoinScore instance;
+    public static CoinPoints instance;
 
     public Text coinText;
-    public int score = 0;
+    public int points = 0;
      private void Awake()
     {
         instance = this;
     }
     // Start is called before the first frame update
     void Start() {
-        coinText.text = "Coins: " + score.ToString() + "/9";
+        coinText.text = "Coins: " + points.ToString() + "/9";
 
     }
 
-    public void AddPoint(){
+    public void AddCoins(){
 
-        score += 1;
-        coinText.text = "Coins: " + score.ToString() + "/9";
+        points += 1;
+        coinText.text = "Coins: " + points.ToString() + "/9";
        
     }
     public void Update()
     {
-        if (score >= 9)
+        if (points >= 9)
         {
             SceneManager.LoadScene("Win");
         }
