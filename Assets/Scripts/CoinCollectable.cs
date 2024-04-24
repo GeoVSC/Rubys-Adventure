@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class CoinCollectable : MonoBehaviour
 {
-<<<<<<< Updated upstream
-    public AudioClip collectedCoin;
-
-     void OnTriggerEnter2D(Collider2D other)
-    {
-       
-        Destroy(gameObject);
-
-=======
     public AudioClip CollectedCoin;
  
      void OnTriggerEnter2D(Collider2D other)
@@ -22,7 +13,6 @@ public class CoinCollectable : MonoBehaviour
         CoinPoints.instance.AddCoins();
         Destroy(gameObject);
         controller.PlaySound(CollectedCoin);
->>>>>>> Stashed changes
     }
     
 }

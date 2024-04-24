@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class CoinScore : MonoBehaviour
+public class CoinPoints : MonoBehaviour
 {
-    public static CoinScore instance;
+    public static CoinPoints instance;
 
     public Text coinText;
     public int score = 0;
@@ -20,7 +20,7 @@ public class CoinScore : MonoBehaviour
 
     }
 
-    public void AddPoint(){
+    public void AddCoins(){
 
         score += 1;
         coinText.text = "Coins: " + score.ToString() + "/9";
